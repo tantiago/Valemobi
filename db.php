@@ -49,8 +49,19 @@ class DB {
 		return $this->conn->lastInsertId();
 	}
 
+	public function obterOperacoes(){
+		$sql ='SELECT * FROM mercadoria m, transacao t WHERE m.id = t.mercadoria_id';
+		$stmt = $this->conn->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
 }
+
+
+
 
 $db = new DB;
 $mercadoria_id = $db->insereMercadoria("ação", "Vale PN");
 echo $db->insereTransacao(30,345.21,"Venda", date('Y-m-d H:i:s'),$mercadoria_id);
+print_r($db->obterOperacoes());
