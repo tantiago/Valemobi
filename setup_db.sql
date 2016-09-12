@@ -12,10 +12,10 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `valemobi`.`transacao` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `quantidade` VARCHAR(45) NOT NULL,
-  `preco` VARCHAR(45) NOT NULL,
+  `quantidade` INTEGER(11) NOT NULL,
+  `preco` DECIMAL(10,2) NOT NULL,
   `tipo_negocio` ENUM('Compra', 'Venda') NOT NULL,
-  `data_hora` VARCHAR(45) NOT NULL,
+  `data_hora` DATETIME NOT NULL,
   `mercadoria_id` INT NOT NULL,
   PRIMARY KEY (`id`, `mercadoria_id`),
   INDEX `fk_transacao_mercadoria_idx` (`mercadoria_id` ASC),

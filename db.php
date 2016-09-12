@@ -21,7 +21,6 @@ class DB {
 	public function __construct(){
 		try {
 			$this->conn = new PDO('mysql:dbname=valemobi;host=127.0.0.1', "testeweb", "vale1234");
-			print_r($this->conn);
 			
 		} catch (PDOException $err) {
 			echo 'Error message: ' . $err->getMessage() . "<br>";
@@ -39,11 +38,19 @@ class DB {
 		return $this->conn->lastInsertId();
 	}
 
-	public function insereTransacao(){
-
+	public function insereTransacao($quantidade, $preco, $tipo_negocio, $data_hora, $mercadoria_id){
+		$stmt = $this->conn->prepare("INSERT INTO transacao(quantidade, preco, tipo_negocio, data_hora, mercadoria_id) VALUES (:quantidade, :preco, :tipo_negocio, :data_hora, :mercadoria_id)");
+		$stmt->bindParam(':quantidade', $quantidade);
+		$stmt->bindParam(':preco', $preco);
+		$stmt->bindParam(':tipo_negocio', $tipo_negocio);
+		$stmt->bindParam(':data_hora', $data_hora);
+		$stmt->bindParam(':mercadoria_id', $mercadoria_id);
+		$stmt->execute();
+		return $this->conn->lastInsertId();
 	}
 
 }
 
 $db = new DB;
-echo $db->insereMercadoria("derivativos", "boi gordo");
+$mercadoria_id = $db->insereMercadoria("ação", "Vale PN");
+echo $db->insereTransacao(30,345.21,"Venda", date('Y-m-d H:i:s'),$mercadoria_id);
