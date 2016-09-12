@@ -20,43 +20,38 @@
 
   </head>
   <body>
-    <form class="form-horizontal" method="post">
-      <div class="form-group">
-        <label for="text" class="col-sm-2 control-label">Código da Mercadoria:</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="id_product">
-        </div>
-      </div>
+    <form class="form-horizontal" method="post" action="processa_form.php">
       <div class="form-group">
         <label for="text" class="col-sm-2 control-label">Tipo de Mercadoria</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="kind_product">
+          <input type="text" class="form-control" name="tipo_mercadoria">
         </div>
       </div>
       <div class="form-group">
         <label for="text" class="col-sm-2 control-label">Nome da Mercadoria</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="name_product">
+          <input type="text" class="form-control" name="nome_mercadoria">
         </div>
       </div>
       <div class="form-group">
         <label for="text" class="col-sm-2 control-label">Quantidade</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="id_product">
+          <input type="text" class="form-control" name="quantidade">
         </div>
       </div>
       <div class="form-group">
         <label for="text" class="col-sm-2 control-label">Preço</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="id_product">
+          <input type="text" class="form-control" name="preco">
         </div>
       </div>
       <div class="form-group">
         <label for="text" class="col-sm-2 control-label">Tipo do Negócio</label>
         <div class="col-sm-10">
-      <select class="form-control">
-        <option>Compra</option>
-        <option>Venda</option>
+      <select class="form-control" name="tipo_negocio">
+        <option value="">Escolha um tipo de negócio</option>
+        <option value="Compra">Compra</option>
+        <option value="Venda">Venda</option>
       </select>
     </div>
   </div>
