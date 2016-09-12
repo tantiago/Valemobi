@@ -20,7 +20,7 @@
 
   </head>
   <body>
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="post">
       <div class="form-group">
         <label for="text" class="col-sm-2 control-label">Código da Mercadoria:</label>
         <div class="col-sm-10">
