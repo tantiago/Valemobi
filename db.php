@@ -1,20 +1,10 @@
 <?php 
 
-/*define('SERVER', 'localhost');
+define('SERVER', 'localhost');
 define('DBNAME', 'valemobi');
 define('USER', 'testeweb');
 define('PASSWORD', 'vale1234');
 
-try {
-	$charset = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8');
-	$conn = new PDO("mysql:host=".SERVER."; dbname=".DBNAME, USER, PASSWORD, $charset);
-
-	var_dump($conn);
-} catch (PDOException $err) {
-	echo 'Error message: ' . $err->getMessage() . "<br>";
-	echo 'File name: ' . $err->getFile() . "<br>";
-	echo 'Linha: ' . $err->getLine() . "<br>";
-}*/
 
 class DB {
 	private $conn;
@@ -53,15 +43,7 @@ class DB {
 		$sql ='SELECT * FROM mercadoria m, transacao t WHERE m.id = t.mercadoria_id';
 		$stmt = $this->conn->prepare($sql);
 		$stmt->execute();
-		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $stmt->fetchAll(PDO::FETCH_OBJ);
 	}
 
 }
-
-
-
-
-$db = new DB;
-$mercadoria_id = $db->insereMercadoria("ação", "Vale PN");
-echo $db->insereTransacao(30,345.21,"Venda", date('Y-m-d H:i:s'),$mercadoria_id);
-print_r($db->obterOperacoes());

@@ -19,6 +19,7 @@
     crossorigin="anonymous"></script>
 
   </head>
+
   <body>
     <form class="form-horizontal" method="post" action="processa_form.php">
       <div class="form-group">
@@ -59,5 +60,10 @@
         <button type="submit" class="btn btn-success">Enviar</button>
       </div>
     </form>
+
+      <h2>
+      <a href="lista.php">Lista de todas as Negociações Efetudas</a>
+    </h2>
+
   </body>
 </html>
