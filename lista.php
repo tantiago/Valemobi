@@ -27,9 +27,9 @@ $db = new DB;
 $lista = $db->obterOperacoes();?>
 
 <?php if(!empty($lista)):?>
-
-				<table class="table table-striped">
-					<tr class='active'>
+      <div class="table-responsive">
+				<table class="table">
+					<tr class="active">
 						<th>Id</th>
 						<th>Tipo da Mercadoria</th>
 						<th>Nome da Mercadoria</th>
@@ -52,6 +52,7 @@ $lista = $db->obterOperacoes();?>
 						</tr>
 					<?php endforeach;?>
 				</table>
+      </div>
 
 			<?php else: ?>
 
