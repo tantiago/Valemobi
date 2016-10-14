@@ -1,17 +1,16 @@
-<?php 
+<?php
 
 define('SERVER', 'localhost');
 define('DBNAME', 'valemobi');
 define('USER', 'testeweb');
 define('PASSWORD', 'vale1234');
 
-
 class DB {
 	private $conn;
 	public function __construct(){
 		try {
 			$this->conn = new PDO('mysql:dbname=valemobi;host=127.0.0.1', "testeweb", "vale1234");
-			
+
 		} catch (PDOException $err) {
 			echo 'Error message: ' . $err->getMessage() . "<br>";
 			echo 'File name: ' . $err->getFile() . "<br>";

@@ -4,8 +4,8 @@ $(function() {
 		errorClass: 'help-block',
 		highlight: function(element) {
 			$(element)
-				.closest('.form-group')
-				.addClass('has-error');
+			.closest('.form-group')
+			.addClass('has-error');
 		},
 		unhighlight: function(element) {
 			$(element)
@@ -46,7 +46,7 @@ $(function() {
 			},
 			quantidade: {
 				required: 'Informe a quantidade.',
-				digits: 'São aceitas quantidades positivas e maiores que zero.',
+				digits: 'São aceitas quantidades positivas e maiores que zero. Somente número inteiros.',
 				min: 'São aceitas quantidades positivas e maiores que zero.',
 			},
 			preco: {
