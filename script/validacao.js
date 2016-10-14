@@ -25,9 +25,13 @@ $(function() {
 			},
 			quantidade: {
 				required: true,
+				digits: true,
+				min: 1,
 			},
 			preco: {
 				required: true,
+				number: true,
+				min: 1,
 			},
 			tipo_negocio: {
 				required: true,
@@ -41,10 +45,13 @@ $(function() {
 				required: 'Informe o nome da mercadoria.',
 			},
 			quantidade: {
-				required: 'Informe o quantidade.',
+				required: 'Informe a quantidade.',
+				digits: 'São aceitas quantidades positivas e maiores que zero.',
+				min: 'São aceitas quantidades positivas e maiores que zero.',
 			},
 			preco: {
 				required: 'Informe o preço da mercadoria.',
+				min: 'São aceitos preços maiores que zero',
 			},
 			tipo_negocio: {
 				required: 'Informe o tipo de negócio.',

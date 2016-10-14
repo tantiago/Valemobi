@@ -12,12 +12,20 @@
 </head>
 <body>
 
-  <div class="container">
+  <div class="container" style="margin-top: 20px">
 
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.php">ValeMobi Tiago Tancredi Soares</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a href="index.php">Inserir Transação</a></li>
+      <li class="active"><a href="lista.php">Ver as Transações Efetuadas</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <h2>
-    <a href="index.php">Clique Aqui para Inserir Novas Operações</a>
-  </h2>
 <?php
 
 require 'db.php';
@@ -28,8 +36,8 @@ $lista = $db->obterOperacoes();?>
 
 <?php if(!empty($lista)):?>
       <div class="table-responsive">
-				<table class="table">
-					<tr class="active">
+				<table class="table table-condensed table-hover">
+					<tr class="success">
 						<th>Id</th>
 						<th>Tipo da Mercadoria</th>
 						<th>Nome da Mercadoria</th>

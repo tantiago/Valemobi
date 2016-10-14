@@ -13,11 +13,26 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container well" style="margin-top: 50px">
 
-      <h2 class="alert alert-warning"><mark>Preencha o formulário abaixo</mark></h2>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.php">ValeMobi Tiago Tancredi Soares</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.php">Inserir Transação</a></li>
+      <li><a href="lista.php">Ver as Transações Efetuadas</a></li>
+    </ul>
+  </div>
+</nav>
 
-      <form class="form-horizontal" method="post" action="processa_form.php" id="form_data">
+      <fieldset>
+        <legend>Preencha o formulário abaixo</legend>
+      </fieldset>
+
+
+      <form class="form" method="post" action="processa_form.php" id="form_data">
 
         <div class="form-group">
           <label for="tipo_mercadoria">Tipo de Mercadoria</label>
@@ -55,14 +70,11 @@
             <option value="Compra">Compra</option>
             <option value="Venda">Venda</option>
           </select>
-
         </div>
         <button type="submit" class="btn btn-success btn-lg active">Enviar</button>
       </form>
 
-      <h2>
-        <a href="lista.php">Lista de todas as Negociações Efetudas</a>
-      </h2>
+
     </div>
 
     <!-- scripts -->
